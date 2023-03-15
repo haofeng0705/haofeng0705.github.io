@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>xxxx</title>
+    <title>CMS 项目文档</title>
     <link href="/2023/03/753dfc6cd7d5.html"/>
     <url>/2023/03/753dfc6cd7d5.html</url>
     
-    <content type="html"><![CDATA[<p><img src="/rrjz0wh3t.hn-bkt.clouddn.com/20230315164208.png" alt="test"><br>fddfs</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="每个配置文件的作用"><a href="#每个配置文件的作用" class="headerlink" title="每个配置文件的作用"></a>每个配置文件的作用</h1><ol><li><code>vite.config.ts</code>: 用于配置项目的构建选项和开发服务器选项, 配置插件、别名、CSS 预处理器等选项，以满足不同项目的需求。</li><li><code>tsconfig.json</code>: 用于配置项目的 TypeScript 编译选项，包括编译器的选项、编译输出的目录、编译的文件等。</li><li><code>env.d.ts</code>: 是一个声明文件，用于声明 TypeScript 中使用的全局变量的类型。在 Vue 3 项目中，<code>env.d.ts</code> 文件通常位于项目的根目录下，用于声明项目中使用的环境变量的类型。</li><li><code>.eslintrc.cjs</code>:</li></ol><h1 id="接口文档"><a href="#接口文档" class="headerlink" title="接口文档"></a>接口文档</h1><p>baseURL的值：</p><p><a href="http://152.136.185.210:5000/">http://152.136.185.210:5000</a><br><a href="http://152.136.185.210:4000/">http://152.136.185.210:4000</a></p><p>设置全局token的方法：</p><p><code>const res = pm.response.json();   </code>pm.globals.set(“token”, res.data.token);&#96;</p><p>接口文档v2版本：（有部分更新）</p><p><a href="https://documenter.getpostman.com/view/12387168/TzzDKb12">https://documenter.getpostman.com/view/12387168/TzzDKb12</a></p>]]></content>
     
     
     <categories>
