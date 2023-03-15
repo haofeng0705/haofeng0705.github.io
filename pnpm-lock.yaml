@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  css: ^3.0.0
   hexo: ^6.3.0
   hexo-deployer-git: ^4.0.0
   hexo-generator-archive: ^2.0.0
@@ -11,9 +12,12 @@ specifiers:
   hexo-renderer-marked: ^6.0.0
   hexo-renderer-stylus: ^2.1.0
   hexo-server: ^3.0.0
+  hexo-theme-fluid: ^1.9.4
   hexo-theme-landscape: ^0.0.3
+  nunjucks: ^3.2.3
 
 dependencies:
+  css: 3.0.0
   hexo: 6.3.0
   hexo-deployer-git: 4.0.0
   hexo-generator-archive: 2.0.0
@@ -24,7 +28,9 @@ dependencies:
   hexo-renderer-marked: 6.0.0
   hexo-renderer-stylus: 2.1.0
   hexo-server: 3.0.0
+  hexo-theme-fluid: 1.9.4_nunjucks@3.2.3
   hexo-theme-landscape: 0.0.3
+  nunjucks: 3.2.3
 
 packages:
 
@@ -738,6 +744,15 @@ packages:
       serve-static: 1.15.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /hexo-theme-fluid/1.9.4_nunjucks@3.2.3:
+    resolution: {integrity: sha512-EaXUh4J6mQZjzKnyNtYHt0U0rIIlGJMsiT+IYHhKXnNrQyaOqMz3H9QC7+o37yzssARiPG3Uc0RtHn3S1DRLoQ==}
+    engines: {node: '>=8.10.0'}
+    peerDependencies:
+      nunjucks: ^3.0.0
+    dependencies:
+      nunjucks: 3.2.3
     dev: false
 
   /hexo-theme-landscape/0.0.3:
