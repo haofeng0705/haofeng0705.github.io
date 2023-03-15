@@ -105,3 +105,5 @@ deploy:
   type: git
   repo: https://github.com/haofeng0705/haofeng0705.github.io.git
   branch: master
+  name: haofeng0705
+  email: raphael.hao.alive@gmail.com
