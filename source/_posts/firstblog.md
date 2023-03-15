@@ -6,3 +6,4 @@ tags: [hexo]
 
 ## version 1
 test
+试一下 GIthub action
