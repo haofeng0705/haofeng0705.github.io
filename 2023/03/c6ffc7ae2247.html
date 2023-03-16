@@ -16,21 +16,28 @@
   <meta name="author" content="Hao Feng">
   <meta name="keywords" content="">
   
-    <meta name="description" content="每个配置文件的作用 vite.config.ts: 用于配置项目的构建选项和开发服务器选项, 配置插件、别名、CSS 预处理器等选项，以满足不同项目的需求。 tsconfig.json: 用于配置项目的 TypeScript 编译选项，包括编译器的选项、编译输出的目录、编译的文件等。 env.d.ts: 是一个声明文件，用于声明 TypeScript 中使用的全局变量的类型。在 Vue 3 项目中">
+    <meta name="description" content="网络请求库 – axios库认识axios axios请求方式 常见的配置选项 axios的创建实例 请求和响应拦截器 用处1：通过请求和响应拦截器加载 loading动画 用处 2：对 请求参数 的修改，token cookie axios请求库封装(降低项目对 axios 库的耦合度) typescript 封装： 在项目中用ts封装axios，一次封装整个团队受益😁 - 掘金 (jueji">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CMS 项目文档">
-<meta property="og:url" content="http://haofeng.wiki/2023/03/5e64f6377278.html">
+<meta property="og:title" content="axios">
+<meta property="og:url" content="http://haofeng.wiki/2023/03/c6ffc7ae2247.html">
 <meta property="og:site_name" content="HF&#39;s Blog">
-<meta property="og:description" content="每个配置文件的作用 vite.config.ts: 用于配置项目的构建选项和开发服务器选项, 配置插件、别名、CSS 预处理器等选项，以满足不同项目的需求。 tsconfig.json: 用于配置项目的 TypeScript 编译选项，包括编译器的选项、编译输出的目录、编译的文件等。 env.d.ts: 是一个声明文件，用于声明 TypeScript 中使用的全局变量的类型。在 Vue 3 项目中">
+<meta property="og:description" content="网络请求库 – axios库认识axios axios请求方式 常见的配置选项 axios的创建实例 请求和响应拦截器 用处1：通过请求和响应拦截器加载 loading动画 用处 2：对 请求参数 的修改，token cookie axios请求库封装(降低项目对 axios 库的耦合度) typescript 封装： 在项目中用ts封装axios，一次封装整个团队受益😁 - 掘金 (jueji">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-15T16:02:17.000Z">
+<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230315224344076.png">
+<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316131343485.png">
+<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316131542711.png">
+<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316133936328.png">
+<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316134035896.png">
+<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316141720842.png">
+<meta property="article:published_time" content="2023-03-16T14:29:00.000Z">
 <meta property="article:modified_time" content="2023-03-16T06:32:48.753Z">
 <meta property="article:author" content="Hao Feng">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230315224344076.png">
   
   
   
-  <title>CMS 项目文档 - HF&#39;s Blog</title>
+  <title>axios - HF&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="CMS 项目文档"></span>
+            <span id="subtitle" data-typed-text="axios"></span>
           
         </div>
 
@@ -207,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-15 16:02" pubdate>
-          2023年3月15日 下午
+        <time datetime="2023-03-16 14:29" pubdate>
+          2023年3月16日 下午
         </time>
       </span>
     
@@ -219,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          564 字
+          183 字
         
       </span>
     
@@ -230,7 +237,7 @@
         
         
         
-          5 分钟
+          2 分钟
         
       </span>
     
@@ -268,26 +275,21 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">CMS 项目文档</h1>
+            <h1 style="display: none">axios</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="每个配置文件的作用"><a href="#每个配置文件的作用" class="headerlink" title="每个配置文件的作用"></a>每个配置文件的作用</h1><ol>
-<li><code>vite.config.ts</code>: 用于配置项目的构建选项和开发服务器选项, 配置插件、别名、CSS 预处理器等选项，以满足不同项目的需求。</li>
-<li><code>tsconfig.json</code>: 用于配置项目的 TypeScript 编译选项，包括编译器的选项、编译输出的目录、编译的文件等。</li>
-<li><code>env.d.ts</code>: 是一个声明文件，用于声明 TypeScript 中使用的全局变量的类型。在 Vue 3 项目中，<code>env.d.ts</code> 文件通常位于项目的根目录下，用于声明项目中使用的环境变量的类型。</li>
-<li><code>.eslintrc.cjs</code>: 代码规范</li>
-<li><code>editorconfig</code>: 代码规范</li>
-</ol>
-<h1 id="接口文档"><a href="#接口文档" class="headerlink" title="接口文档"></a>接口文档</h1><p>baseURL的值：</p>
-<p><a target="_blank" rel="noopener" href="http://152.136.185.210:5000/">http://152.136.185.210:5000</a><br><a target="_blank" rel="noopener" href="http://152.136.185.210:4000/">http://152.136.185.210:4000</a></p>
-<p>设置全局token的方法：</p>
-<p><code>const res = pm.response.json(); </code> </p>
-<p><code>pm.globals.set(&quot;token&quot;, res.data.token);</code></p>
-<p>接口文档v2版本：（有部分更新）</p>
-<p><a target="_blank" rel="noopener" href="https://documenter.getpostman.com/view/12387168/TzzDKb12">https://documenter.getpostman.com/view/12387168/TzzDKb12</a></p>
-<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><h4 id="1-目录结构的创建"><a href="#1-目录结构的创建" class="headerlink" title="1. 目录结构的创建"></a>1. 目录结构的创建</h4><h4 id="2-css样式的重置"><a href="#2-css样式的重置" class="headerlink" title="2. css样式的重置"></a>2. css样式的重置</h4><h4 id="3-vue-router路由"><a href="#3-vue-router路由" class="headerlink" title="3. vue-router路由"></a>3. vue-router路由</h4><h4 id="4-pinia状态管理"><a href="#4-pinia状态管理" class="headerlink" title="4. pinia状态管理"></a>4. pinia状态管理</h4><h4 id="5-axios网络请求（-）"><a href="#5-axios网络请求（-）" class="headerlink" title="5. axios网络请求（*）"></a>5. axios网络请求（*）</h4><h4 id="6-区分开发和生产环境"><a href="#6-区分开发和生产环境" class="headerlink" title="6. 区分开发和生产环境"></a>6. 区分开发和生产环境</h4>
+                <h1 id="网络请求库-–-axios库"><a href="#网络请求库-–-axios库" class="headerlink" title="网络请求库 – axios库"></a>网络请求库 – axios库</h1><h2 id="认识axios"><a href="#认识axios" class="headerlink" title="认识axios"></a>认识axios</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230315224344076.png" srcset="/img/loading.gif" lazyload alt="image-20230315224344076"></p>
+<h2 id="axios请求方式"><a href="#axios请求方式" class="headerlink" title="axios请求方式"></a>axios请求方式</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316131343485.png" srcset="/img/loading.gif" lazyload alt="image-20230316131343485"></p>
+<h2 id="常见的配置选项"><a href="#常见的配置选项" class="headerlink" title="常见的配置选项"></a>常见的配置选项</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316131542711.png" srcset="/img/loading.gif" lazyload alt="image-20230316131542711"></p>
+<h2 id="axios的创建实例"><a href="#axios的创建实例" class="headerlink" title="axios的创建实例"></a>axios的创建实例</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316133936328.png" srcset="/img/loading.gif" lazyload alt="image-20230316133936328"></p>
+<h2 id="请求和响应拦截器"><a href="#请求和响应拦截器" class="headerlink" title="请求和响应拦截器"></a>请求和响应拦截器</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316134035896.png" srcset="/img/loading.gif" lazyload alt="image-20230316134035896"></p>
+<p>用处1：通过请求和响应拦截器加载 <code>loading</code>动画</p>
+<p>用处 2：对 <code>请求参数 </code>的修改，token cookie</p>
+<h2 id="axios请求库封装-降低项目对-axios-库的耦合度"><a href="#axios请求库封装-降低项目对-axios-库的耦合度" class="headerlink" title="axios请求库封装(降低项目对 axios 库的耦合度)"></a>axios请求库封装(降低项目对 axios 库的耦合度)</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316141720842.png" srcset="/img/loading.gif" lazyload alt="image-20230316141720842"></p>
+<p>typescript 封装： <a target="_blank" rel="noopener" href="https://juejin.cn/post/7071518211392405541">在项目中用ts封装axios，一次封装整个团队受益😁 - 掘金 (juejin.cn)</a></p>
+
                 
               </div>
             
@@ -325,8 +327,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>CMS 项目文档</div>
-      <div>http://haofeng.wiki/2023/03/5e64f6377278.html</div>
+      <div>axios</div>
+      <div>http://haofeng.wiki/2023/03/c6ffc7ae2247.html</div>
     </div>
     <div class="license-meta">
       
@@ -338,7 +340,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月15日</div>
+          <div>2023年3月16日</div>
         </div>
       
       
@@ -370,15 +372,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/c6ffc7ae2247.html" title="axios">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">axios</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/03/5e64f6377278.html" title="CMS 项目文档">
+                        <span class="hidden-mobile">CMS 项目文档</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
