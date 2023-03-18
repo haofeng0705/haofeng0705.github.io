@@ -16,21 +16,21 @@
   <meta name="author" content="Hao Feng">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一. Element-Plus集成1.1. 全局引入 “types”: [“element-plus&#x2F;global”] 的配置，可以使用 volar 提示 props  1.2. 按需引入(*) vite插件配置 http:&#x2F;&#x2F;element-plus.org&#x2F;zh-CN&#x2F;guide&#x2F;quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5">
+    <meta name="description" content="一. 登录页面的功能1.1. 导航守卫使用导航守卫进行拦截，而不是简单使用 redirect。 1234567router.beforeEach((to) &#x3D;&gt; &amp;#123;  &#x2F;&#x2F; 只有登录成功(token), 才能真正进入到main页面  const token &#x3D; localCache.getCache(LOGIN_TOKEN)  if (to.path.startsWith(&amp;#x2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="elementUI 与搭建登录页面">
-<meta property="og:url" content="http://haofeng.wiki/2023/03/7cfa452e70c6.html">
+<meta property="og:title" content="动态路由">
+<meta property="og:url" content="http://haofeng.wiki/2023/03/b260b469fe52.html">
 <meta property="og:site_name" content="HF&#39;s Blog">
-<meta property="og:description" content="一. Element-Plus集成1.1. 全局引入 “types”: [“element-plus&#x2F;global”] 的配置，可以使用 volar 提示 props  1.2. 按需引入(*) vite插件配置 http:&#x2F;&#x2F;element-plus.org&#x2F;zh-CN&#x2F;guide&#x2F;quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5">
+<meta property="og:description" content="一. 登录页面的功能1.1. 导航守卫使用导航守卫进行拦截，而不是简单使用 redirect。 1234567router.beforeEach((to) &#x3D;&gt; &amp;#123;  &#x2F;&#x2F; 只有登录成功(token), 才能真正进入到main页面  const token &#x3D; localCache.getCache(LOGIN_TOKEN)  if (to.path.startsWith(&amp;#x2">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-17T13:49:00.000Z">
+<meta property="article:published_time" content="2023-03-18T16:37:00.000Z">
 <meta property="article:modified_time" content="2023-03-18T08:38:53.989Z">
 <meta property="article:author" content="Hao Feng">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>elementUI 与搭建登录页面 - HF&#39;s Blog</title>
+  <title>动态路由 - HF&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="elementUI 与搭建登录页面"></span>
+            <span id="subtitle" data-typed-text="动态路由"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-17 13:49" pubdate>
-          2023年3月17日 下午
+        <time datetime="2023-03-18 16:37" pubdate>
+          2023年3月18日 下午
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          793 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          12 分钟
+          7 分钟
         
       </span>
     
@@ -268,51 +268,40 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">elementUI 与搭建登录页面</h1>
+            <h1 style="display: none">动态路由</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="一-Element-Plus集成"><a href="#一-Element-Plus集成" class="headerlink" title="一. Element-Plus集成"></a>一. Element-Plus集成</h2><h3 id="1-1-全局引入"><a href="#1-1-全局引入" class="headerlink" title="1.1. 全局引入"></a>1.1. 全局引入</h3><ul>
-<li>“types”: [“element-plus&#x2F;global”] 的配置，可以使用 volar 提示 props</li>
-</ul>
-<h3 id="1-2-按需引入"><a href="#1-2-按需引入" class="headerlink" title="1.2. 按需引入(*)"></a>1.2. 按需引入(*)</h3><ul>
-<li><p>vite插件配置</p>
-<p><a target="_blank" rel="noopener" href="http://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5">http://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5</a></p>
-</li>
-</ul>
-<h3 id="1-3-图标的引入"><a href="#1-3-图标的引入" class="headerlink" title="1.3. 图标的引入"></a>1.3. 图标的引入</h3><h3 id="1-4-ElMessage引入"><a href="#1-4-ElMessage引入" class="headerlink" title="1.4. ElMessage引入"></a>1.4. ElMessage引入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> registerIcons <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./global/register-icons&#x27;</span><br><br><span class="hljs-comment">// 0.针对ElMessage和ElLoading等组件引入样式</span><br><span class="hljs-comment">// 1.全局引入样式(所有样式全部引入)</span><br><span class="hljs-comment">// import &#x27;element-plus/dist/index.css&#x27;</span><br><span class="hljs-comment">// 2.组件样式引入</span><br><span class="hljs-comment">// import &#x27;element-plus/theme-chalk/el-message.css&#x27;</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 3.使用vite-plugin-style-import</span><br><span class="hljs-comment"> *   * npm install vite-plugin-style-import consola -D</span><br><span class="hljs-comment"> *   * 在vite.config.ts中配置</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-comment">// 1.全局注册element-plus: 方便和简洁</span><br><span class="hljs-comment">// import ElementPlus from &#x27;element-plus&#x27;</span><br><span class="hljs-comment">// import &#x27;element-plus/dist/index.css&#x27;</span><br><br><span class="hljs-comment">// app.use(ElementPlus)</span><br><br><span class="hljs-comment">// 2.按需引入: 用到哪一个组件再引入</span><br><span class="hljs-comment">// import &#123; ElButton &#125; from &#x27;element-plus&#x27;</span><br><span class="hljs-comment">// app.component(ElButton.name, ElButton)</span><br><br><span class="hljs-comment">// 3.图标的全局注册</span><br><br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br>app.<span class="hljs-title function_">use</span>(registerIcons)<br></code></pre></td></tr></table></figure>
+                <h1 id="一-登录页面的功能"><a href="#一-登录页面的功能" class="headerlink" title="一. 登录页面的功能"></a>一. 登录页面的功能</h1><h3 id="1-1-导航守卫"><a href="#1-1-导航守卫" class="headerlink" title="1.1. 导航守卫"></a>1.1. 导航守卫</h3><p>使用导航守卫进行拦截，而不是简单使用 redirect。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ts">router.<span class="hljs-title function_">beforeEach</span>(<span class="hljs-function">(<span class="hljs-params">to</span>) =&gt;</span> &#123;<br>  <span class="hljs-comment">// 只有登录成功(token), 才能真正进入到main页面</span><br>  <span class="hljs-keyword">const</span> token = localCache.<span class="hljs-title function_">getCache</span>(<span class="hljs-variable constant_">LOGIN_TOKEN</span>)<br>  <span class="hljs-keyword">if</span> (to.<span class="hljs-property">path</span>.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;/main&#x27;</span>) &amp;&amp; !token) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;/login&#x27;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
-<h2 id="二-搭建登录页面"><a href="#二-搭建登录页面" class="headerlink" title="二. 搭建登录页面"></a>二. 搭建登录页面</h2><h3 id="2-1-背景的搭建"><a href="#2-1-背景的搭建" class="headerlink" title="2.1. 背景的搭建"></a>2.1. 背景的搭建</h3><ul>
-<li>100vw&#x2F;vh</li>
+<h4 id="1-1-1-退出登录功能"><a href="#1-1-1-退出登录功能" class="headerlink" title="1.1.1 退出登录功能"></a>1.1.1 退出登录功能</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 清除缓存 -&gt; 跳转到 login</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">handleExitClick</span>(<span class="hljs-params"></span>) &#123;<br>  localCache.<span class="hljs-title function_">removeCache</span>(<span class="hljs-variable constant_">LOGIN_TOKEN</span>)<br>  router.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;/login&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-2-记住密码功能"><a href="#1-2-记住密码功能" class="headerlink" title="1.2. 记住密码功能"></a>1.2. 记住密码功能</h3><h3 id="1-3-main权限管理"><a href="#1-3-main权限管理" class="headerlink" title="1.3. main权限管理"></a>1.3. main权限管理</h3><ul>
+<li>RBAC: role based access control<ul>
+<li>基于角色访问控制(权限管理)</li>
 </ul>
-<h3 id="2-2-登录界面Panel"><a href="#2-2-登录界面Panel" class="headerlink" title="2.2. 登录界面Panel"></a>2.2. 登录界面Panel</h3><h4 id="2-2-1-整体界面的搭建"><a href="#2-2-1-整体界面的搭建" class="headerlink" title="2.2.1. 整体界面的搭建"></a>2.2.1. 整体界面的搭建</h4><ul>
-<li>标题</li>
-<li>tabs</li>
-<li>记住密码&#x2F;忘记链接(组件)</li>
-<li>立即登录(组件)</li>
+</li>
+<li>后台数据库设计表(了解)</li>
 </ul>
-<h4 id="2-2-2-tabs搭建过程"><a href="#2-2-2-tabs搭建过程" class="headerlink" title="2.2.2. tabs搭建过程"></a>2.2.2. tabs搭建过程</h4><ul>
-<li>label的插槽使用</li>
-<li>内容显示</li>
+<h3 id="1-4-请求用户信息"><a href="#1-4-请求用户信息" class="headerlink" title="1.4. 请求用户信息"></a>1.4. 请求用户信息</h3><ul>
+<li>用户的角色</li>
 </ul>
-<h4 id="2-2-3-账号登录form"><a href="#2-2-3-账号登录form" class="headerlink" title="2.2.3. 账号登录form"></a>2.2.3. 账号登录form</h4><ul>
-<li>ElForm&#x2F;ElFormItem&#x2F;ElInput</li>
-<li>绑定属性</li>
+<h3 id="1-5-根据角色id获取菜单信息"><a href="#1-5-根据角色id获取菜单信息" class="headerlink" title="1.5. 根据角色id获取菜单信息"></a>1.5. 根据角色id获取菜单信息</h3><h3 id="1-6-userInfo-x2F-userMenus进行本地缓存"><a href="#1-6-userInfo-x2F-userMenus进行本地缓存" class="headerlink" title="1.6. userInfo&#x2F;userMenus进行本地缓存"></a>1.6. userInfo&#x2F;userMenus进行本地缓存</h3><h2 id="二-首页的界面搭建"><a href="#二-首页的界面搭建" class="headerlink" title="二. 首页的界面搭建"></a>二. 首页的界面搭建</h2><h3 id="2-1-整体的布局ElContainer"><a href="#2-1-整体的布局ElContainer" class="headerlink" title="2.1. 整体的布局ElContainer"></a>2.1. 整体的布局ElContainer</h3><h3 id="2-2-侧边栏的菜单Menu"><a href="#2-2-侧边栏的菜单Menu" class="headerlink" title="2.2. 侧边栏的菜单Menu"></a>2.2. 侧边栏的菜单Menu</h3><h4 id="2-2-1-分析ElMenu每一个组件的作用"><a href="#2-2-1-分析ElMenu每一个组件的作用" class="headerlink" title="2.2.1. 分析ElMenu每一个组件的作用"></a>2.2.1. 分析ElMenu每一个组件的作用</h4><h4 id="2-2-2-手动的搭建整个菜单结构"><a href="#2-2-2-手动的搭建整个菜单结构" class="headerlink" title="2.2.2. 手动的搭建整个菜单结构"></a>2.2.2. 手动的搭建整个菜单结构</h4><h4 id="2-2-3-根据userMenus动态遍历"><a href="#2-2-3-根据userMenus动态遍历" class="headerlink" title="2.2.3. 根据userMenus动态遍历"></a>2.2.3. 根据userMenus动态遍历</h4><h4 id="2-2-4-图标动态-动态组件"><a href="#2-2-4-图标动态-动态组件" class="headerlink" title="2.2.4. 图标动态: 动态组件"></a>2.2.4. 图标动态: 动态组件</h4><h3 id="2-3-Main的头部Header展示"><a href="#2-3-Main的头部Header展示" class="headerlink" title="2.3. Main的头部Header展示"></a>2.3. Main的头部Header展示</h3><h4 id="2-3-1-menu-icon的图标点击"><a href="#2-3-1-menu-icon的图标点击" class="headerlink" title="2.3.1. menu-icon的图标点击"></a>2.3.1. menu-icon的图标点击</h4><ul>
+<li>点击切换自己的图标</li>
+<li>切换aside的宽度(动画)</li>
+<li>切换menu的折叠效果</li>
 </ul>
-<h4 id="2-2-4-form的校验规则"><a href="#2-2-4-form的校验规则" class="headerlink" title="2.2.4. form的校验规则"></a>2.2.4. form的校验规则</h4><h4 id="2-2-5-点击立即登录"><a href="#2-2-5-点击立即登录" class="headerlink" title="2.2.5. 点击立即登录"></a>2.2.5. 点击立即登录</h4><ul>
-<li>父组件发生点击, 执行子组件的函数.</li>
-<li>defineExpose()： 用于定义暴露给全局作用域的变量</li>
-<li>const accountRef &#x3D; ref&lt;InstanceType<typeof PaneAccount>&gt;()</li>
+<h4 id="2-3-2-个人信息的展示"><a href="#2-3-2-个人信息的展示" class="headerlink" title="2.3.2. 个人信息的展示"></a>2.3.2. 个人信息的展示</h4><ul>
+<li>退出登录</li>
+<li>样式的调整</li>
 </ul>
-<h3 id="2-3-登录的操作"><a href="#2-3-登录的操作" class="headerlink" title="2.3. 登录的操作"></a>2.3. 登录的操作</h3><h4 id="2-3-1-form通过验证"><a href="#2-3-1-form通过验证" class="headerlink" title="2.3.1. form通过验证"></a>2.3.1. form通过验证</h4><ul>
-<li>formRef.validate(回调)</li>
+<h3 id="2-4-注册所有的路由-页面跳转（动态路由）"><a href="#2-4-注册所有的路由-页面跳转（动态路由）" class="headerlink" title="2.4. 注册所有的路由, 页面跳转（动态路由）"></a>2.4. 注册所有的路由, 页面跳转（动态路由）</h3><ul>
+<li>动态的菜单进行权限管理</li>
+<li>但是所有的路由都是被注册进去</li>
 </ul>
-<h4 id="2-3-2-登录接口的调用"><a href="#2-3-2-登录接口的调用" class="headerlink" title="2.3.2. 登录接口的调用"></a>2.3.2. 登录接口的调用</h4><ul>
-<li>post</li>
-<li>data: {name, password}</li>
-</ul>
-<h4 id="2-3-3-将登录操作store中"><a href="#2-3-3-将登录操作store中" class="headerlink" title="2.3.3. 将登录操作store中"></a>2.3.3. 将登录操作store中</h4><h4 id="2-3-4-IAccount类型的定义"><a href="#2-3-4-IAccount类型的定义" class="headerlink" title="2.3.4. IAccount类型的定义"></a>2.3.4. IAccount类型的定义</h4><h3 id="2-4-postman的使用"><a href="#2-4-postman的使用" class="headerlink" title="2.4. postman的使用"></a>2.4. postman的使用</h3><h3 id="2-5-token缓存和cache封装"><a href="#2-5-token缓存和cache封装" class="headerlink" title="2.5. token缓存和cache封装"></a>2.5. token缓存和cache封装</h3>
+
                 
               </div>
             
@@ -357,8 +346,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>elementUI 与搭建登录页面</div>
-      <div>http://haofeng.wiki/2023/03/7cfa452e70c6.html</div>
+      <div>动态路由</div>
+      <div>http://haofeng.wiki/2023/03/b260b469fe52.html</div>
     </div>
     <div class="license-meta">
       
@@ -370,7 +359,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月17日</div>
+          <div>2023年3月18日</div>
         </div>
       
       
@@ -402,18 +391,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/b260b469fe52.html" title="动态路由">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">动态路由</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/c6ffc7ae2247.html" title="axios">
-                        <span class="hidden-mobile">axios</span>
+                      <a href="/2023/03/7cfa452e70c6.html" title="elementUI 与搭建登录页面">
+                        <span class="hidden-mobile">elementUI 与搭建登录页面</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
