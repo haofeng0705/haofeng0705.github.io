@@ -16,28 +16,21 @@
   <meta name="author" content="Hao Feng">
   <meta name="keywords" content="">
   
-    <meta name="description" content="网络请求库 – axios库认识axios axios请求方式 常见的配置选项 axios的创建实例 请求和响应拦截器 用处1：通过请求和响应拦截器加载 loading动画 用处 2：对 请求参数 的修改，token cookie axios请求库封装(降低项目对 axios 库的耦合度) typescript 封装： 在项目中用ts封装axios，一次封装整个团队受益😁 - 掘金 (jueji">
+    <meta name="description" content="动态路由1.1. 基于角色添加路由定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。 缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON 1.2. 基于菜单动态匹配（*）没有权限就没有对应的菜单，把菜单映射成路由对象。 将 views 和动态路由对应起来，以便自动化处理 1.3. 动态创建页面和路由对象自动化添加：coderwhy add3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="axios">
-<meta property="og:url" content="http://haofeng.wiki/2023/03/c6ffc7ae2247.html">
+<meta property="og:title" content="动态路由">
+<meta property="og:url" content="http://haofeng.wiki/2023/03/9771e484b89a.html">
 <meta property="og:site_name" content="HF&#39;s Blog">
-<meta property="og:description" content="网络请求库 – axios库认识axios axios请求方式 常见的配置选项 axios的创建实例 请求和响应拦截器 用处1：通过请求和响应拦截器加载 loading动画 用处 2：对 请求参数 的修改，token cookie axios请求库封装(降低项目对 axios 库的耦合度) typescript 封装： 在项目中用ts封装axios，一次封装整个团队受益😁 - 掘金 (jueji">
+<meta property="og:description" content="动态路由1.1. 基于角色添加路由定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。 缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON 1.2. 基于菜单动态匹配（*）没有权限就没有对应的菜单，把菜单映射成路由对象。 将 views 和动态路由对应起来，以便自动化处理 1.3. 动态创建页面和路由对象自动化添加：coderwhy add3">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230315224344076.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316131343485.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316131542711.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316133936328.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316134035896.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316141720842.png">
-<meta property="article:published_time" content="2023-03-16T14:29:00.000Z">
+<meta property="article:published_time" content="2023-03-21T21:03:00.000Z">
 <meta property="article:modified_time" content="2023-03-21T13:06:04.555Z">
 <meta property="article:author" content="Hao Feng">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230315224344076.png">
   
   
   
-  <title>axios - HF&#39;s Blog</title>
+  <title>动态路由 - HF&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="axios"></span>
+            <span id="subtitle" data-typed-text="动态路由"></span>
           
         </div>
 
@@ -214,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-16 14:29" pubdate>
-          2023年3月16日 下午
+        <time datetime="2023-03-21 21:03" pubdate>
+          2023年3月21日 晚上
         </time>
       </span>
     
@@ -226,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          271 字
+          679 字
         
       </span>
     
@@ -237,7 +230,7 @@
         
         
         
-          3 分钟
+          6 分钟
         
       </span>
     
@@ -275,25 +268,27 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">axios</h1>
+            <h1 style="display: none">动态路由</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="网络请求库-–-axios库"><a href="#网络请求库-–-axios库" class="headerlink" title="网络请求库 – axios库"></a>网络请求库 – axios库</h1><h2 id="认识axios"><a href="#认识axios" class="headerlink" title="认识axios"></a>认识axios</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230315224344076.png" srcset="/img/loading.gif" lazyload alt="image-20230315224344076"></p>
-<h2 id="axios请求方式"><a href="#axios请求方式" class="headerlink" title="axios请求方式"></a>axios请求方式</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316131343485.png" srcset="/img/loading.gif" lazyload alt="image-20230316131343485"></p>
-<h2 id="常见的配置选项"><a href="#常见的配置选项" class="headerlink" title="常见的配置选项"></a>常见的配置选项</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316131542711.png" srcset="/img/loading.gif" lazyload alt="image-20230316131542711"></p>
-<h2 id="axios的创建实例"><a href="#axios的创建实例" class="headerlink" title="axios的创建实例"></a>axios的创建实例</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316133936328.png" srcset="/img/loading.gif" lazyload alt="image-20230316133936328"></p>
-<h2 id="请求和响应拦截器"><a href="#请求和响应拦截器" class="headerlink" title="请求和响应拦截器"></a>请求和响应拦截器</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316134035896.png" srcset="/img/loading.gif" lazyload alt="image-20230316134035896"></p>
-<p>用处1：通过请求和响应拦截器加载 <code>loading</code>动画</p>
-<p>用处 2：对 <code>请求参数 </code>的修改，token cookie</p>
-<h2 id="axios请求库封装-降低项目对-axios-库的耦合度"><a href="#axios请求库封装-降低项目对-axios-库的耦合度" class="headerlink" title="axios请求库封装(降低项目对 axios 库的耦合度)"></a>axios请求库封装(降低项目对 axios 库的耦合度)</h2><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230316141720842.png" srcset="/img/loading.gif" lazyload alt="image-20230316141720842"></p>
-<p>typescript 封装： <a target="_blank" rel="noopener" href="https://juejin.cn/post/7071518211392405541">在项目中用ts封装axios，一次封装整个团队受益😁 - 掘金 (juejin.cn)</a></p>
-<ul>
-<li>类拦截器 （类内部的拦截，aka 通用拦截）</li>
-<li>实例拦截器（针对不同实例的拦截，创建实例的时候传入不同的拦截器实现不同的效果（如 loading））</li>
-<li>接口拦截器（对每个请求做精细化的控制）</li>
+                <h1 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h1><h3 id="1-1-基于角色添加路由"><a href="#1-1-基于角色添加路由" class="headerlink" title="1.1. 基于角色添加路由"></a>1.1. 基于角色添加路由</h3><p>定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。</p>
+<p>缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON</p>
+<h3 id="1-2-基于菜单动态匹配（-）"><a href="#1-2-基于菜单动态匹配（-）" class="headerlink" title="1.2. 基于菜单动态匹配（*）"></a>1.2. 基于菜单动态匹配（*）</h3><p>没有权限就没有对应的菜单，<strong>把菜单映射成路由对象</strong>。</p>
+<p>将 views 和动态路由对应起来，以便自动化处理</p>
+<h3 id="1-3-动态创建页面和路由对象"><a href="#1-3-动态创建页面和路由对象" class="headerlink" title="1.3. 动态创建页面和路由对象"></a>1.3. 动态创建页面和路由对象</h3><p>自动化添加：coderwhy add3page_setup {pagename} -d {path} （保证Router 和 Views 对应一致）</p>
+<h3 id="1-4-从文件中读取所有的路由"><a href="#1-4-从文件中读取所有的路由" class="headerlink" title="1.4. 从文件中读取所有的路由"></a>1.4. 从文件中读取所有的路由</h3><ul>
+<li>localRoutes</li>
 </ul>
+<h3 id="1-5-根据菜单动态的映射路由"><a href="#1-5-根据菜单动态的映射路由" class="headerlink" title="1.5. 根据菜单动态的映射路由"></a>1.5. 根据菜单动态的映射路由</h3><ul>
+<li>routes</li>
+<li>router.addRoute(‘main’, xxxx)</li>
+</ul>
+<h3 id="1-6-刷新保持路由的注册状态"><a href="#1-6-刷新保持路由的注册状态" class="headerlink" title="1.6. 刷新保持路由的注册状态"></a>1.6. 刷新保持路由的注册状态</h3><h3 id="1-7-登录进入匹配第一个页面"><a href="#1-7-登录进入匹配第一个页面" class="headerlink" title="1.7. 登录进入匹配第一个页面"></a>1.7. 登录进入匹配第一个页面</h3><h3 id="1-8-刷新页面根据路径匹配menu菜单"><a href="#1-8-刷新页面根据路径匹配menu菜单" class="headerlink" title="1.8. 刷新页面根据路径匹配menu菜单"></a>1.8. 刷新页面根据路径匹配menu菜单</h3><h3 id="1-9-面包屑的功能实现"><a href="#1-9-面包屑的功能实现" class="headerlink" title="1.9. 面包屑的功能实现"></a>1.9. 面包屑的功能实现</h3><p>点击面包屑实现路由跳转，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">el-breadcrumb</span> <span class="hljs-attr">separator-icon</span>=<span class="hljs-string">&quot;CaretRight&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in breadcrumbs&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.name&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">el-breadcrumb-item</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;item.path&quot;</span>&gt;</span><br>          &#123;&#123; item.name &#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb-item</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>「」</p>
 
                 
               </div>
@@ -312,8 +307,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/dev/" class="category-chain-item">dev</a>
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/" class="category-chain-item">前端项目</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/CMS-%E9%A1%B9%E7%9B%AE/" class="category-chain-item">CMS 项目</a>
+  
+  
+
   
 
       </span>
@@ -332,8 +334,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>axios</div>
-      <div>http://haofeng.wiki/2023/03/c6ffc7ae2247.html</div>
+      <div>动态路由</div>
+      <div>http://haofeng.wiki/2023/03/9771e484b89a.html</div>
     </div>
     <div class="license-meta">
       
@@ -345,7 +347,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月16日</div>
+          <div>2023年3月21日</div>
         </div>
       
       
@@ -377,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/7cfa452e70c6.html" title="elementUI 与搭建登录页面">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">elementUI 与搭建登录页面</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/b218196c82cd.html" title="CMS 项目文档">
-                        <span class="hidden-mobile">CMS 项目文档</span>
+                      <a href="/2023/03/18a6def6cce0.html" title="用户管理">
+                        <span class="hidden-mobile">用户管理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
