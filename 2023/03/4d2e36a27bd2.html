@@ -16,21 +16,23 @@
   <meta name="author" content="Hao Feng">
   <meta name="keywords" content="">
   
-    <meta name="description" content="动态路由1.1. 基于角色添加路由定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。 缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON 1.2. 基于菜单动态匹配（*）没有权限就没有对应的菜单，把菜单映射成路由对象。 将 views 和动态路由对应起来，以便自动化处理 1.3. 动态创建页面和路由对象自动化添加：coderwhy add3">
+    <meta name="description" content="父子组件通信父子组件通信是指，Child 组件引入到 Father 组件里渲染，此时 Father 是 Child 的父级；Child 组件的一些数据需要从 Father 组件拿，Child 组件有时也要告知 Father 组件一些数据变化情况。 他们之间的关系如下， Child.vue 是直接挂载在 Father.vue 下面： bash 1234# 父组件Father.vue│ # 子组件└─">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动态路由">
-<meta property="og:url" content="http://haofeng.wiki/2023/03/9771e484b89a.html">
+<meta property="og:title" content="HF&#39;s Blog">
+<meta property="og:url" content="http://haofeng.wiki/2023/03/4d2e36a27bd2.html">
 <meta property="og:site_name" content="HF&#39;s Blog">
-<meta property="og:description" content="动态路由1.1. 基于角色添加路由定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。 缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON 1.2. 基于菜单动态匹配（*）没有权限就没有对应的菜单，把菜单映射成路由对象。 将 views 和动态路由对应起来，以便自动化处理 1.3. 动态创建页面和路由对象自动化添加：coderwhy add3">
+<meta property="og:description" content="父子组件通信父子组件通信是指，Child 组件引入到 Father 组件里渲染，此时 Father 是 Child 的父级；Child 组件的一些数据需要从 Father 组件拿，Child 组件有时也要告知 Father 组件一些数据变化情况。 他们之间的关系如下， Child.vue 是直接挂载在 Father.vue 下面： bash 1234# 父组件Father.vue│ # 子组件└─">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-21T21:03:00.000Z">
+<meta property="og:image" content="https://vue3.chengpeiquan.com/assets/img/communication-prop-drilling.png">
+<meta property="article:published_time" content="2023-03-25T12:29:12.359Z">
 <meta property="article:modified_time" content="2023-03-25T12:29:12.359Z">
 <meta property="article:author" content="Hao Feng">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vue3.chengpeiquan.com/assets/img/communication-prop-drilling.png">
   
   
   
-  <title>动态路由 - HF&#39;s Blog</title>
+  <title>HF&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="动态路由"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -207,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-21 21:03" pubdate>
-          2023年3月21日 晚上
+        <time datetime="2023-03-25 12:29" pubdate>
+          2023年3月25日 中午
         </time>
       </span>
     
@@ -219,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          679 字
+          1.7k 字
         
       </span>
     
@@ -230,7 +232,7 @@
         
         
         
-          6 分钟
+          14 分钟
         
       </span>
     
@@ -268,27 +270,167 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">动态路由</h1>
+            <h1 style="display: none"></h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h1><h3 id="1-1-基于角色添加路由"><a href="#1-1-基于角色添加路由" class="headerlink" title="1.1. 基于角色添加路由"></a>1.1. 基于角色添加路由</h3><p>定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。</p>
-<p>缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON</p>
-<h3 id="1-2-基于菜单动态匹配（-）"><a href="#1-2-基于菜单动态匹配（-）" class="headerlink" title="1.2. 基于菜单动态匹配（*）"></a>1.2. 基于菜单动态匹配（*）</h3><p>没有权限就没有对应的菜单，<strong>把菜单映射成路由对象</strong>。</p>
-<p>将 views 和动态路由对应起来，以便自动化处理</p>
-<h3 id="1-3-动态创建页面和路由对象"><a href="#1-3-动态创建页面和路由对象" class="headerlink" title="1.3. 动态创建页面和路由对象"></a>1.3. 动态创建页面和路由对象</h3><p>自动化添加：coderwhy add3page_setup {pagename} -d {path} （保证Router 和 Views 对应一致）</p>
-<h3 id="1-4-从文件中读取所有的路由"><a href="#1-4-从文件中读取所有的路由" class="headerlink" title="1.4. 从文件中读取所有的路由"></a>1.4. 从文件中读取所有的路由</h3><ul>
-<li>localRoutes</li>
-</ul>
-<h3 id="1-5-根据菜单动态的映射路由"><a href="#1-5-根据菜单动态的映射路由" class="headerlink" title="1.5. 根据菜单动态的映射路由"></a>1.5. 根据菜单动态的映射路由</h3><ul>
-<li>routes</li>
-<li>router.addRoute(‘main’, xxxx)</li>
-</ul>
-<h3 id="1-6-刷新保持路由的注册状态"><a href="#1-6-刷新保持路由的注册状态" class="headerlink" title="1.6. 刷新保持路由的注册状态"></a>1.6. 刷新保持路由的注册状态</h3><h3 id="1-7-登录进入匹配第一个页面"><a href="#1-7-登录进入匹配第一个页面" class="headerlink" title="1.7. 登录进入匹配第一个页面"></a>1.7. 登录进入匹配第一个页面</h3><h3 id="1-8-刷新页面根据路径匹配menu菜单"><a href="#1-8-刷新页面根据路径匹配menu菜单" class="headerlink" title="1.8. 刷新页面根据路径匹配menu菜单"></a>1.8. 刷新页面根据路径匹配menu菜单</h3><h3 id="1-9-面包屑的功能实现"><a href="#1-9-面包屑的功能实现" class="headerlink" title="1.9. 面包屑的功能实现"></a>1.9. 面包屑的功能实现</h3><p>点击面包屑实现路由跳转，</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">el-breadcrumb</span> <span class="hljs-attr">separator-icon</span>=<span class="hljs-string">&quot;CaretRight&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in breadcrumbs&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.name&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">el-breadcrumb-item</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;item.path&quot;</span>&gt;</span><br>          &#123;&#123; item.name &#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb-item</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb</span>&gt;</span><br></code></pre></td></tr></table></figure>
+                <h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><p>父子组件通信是指，Child 组件引入到 Father 组件里渲染，此时 Father 是 Child 的父级；Child 组件的一些数据需要从 Father 组件拿，Child 组件有时也要告知 Father 组件一些数据变化情况。</p>
+<p>他们之间的关系如下， Child.vue 是直接挂载在 Father.vue 下面：</p>
+<p>bash</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta"># 父组件</span><br>Father.vue<br>│ <span class="hljs-meta"># 子组件</span><br>└─Child.vue<br></code></pre></td></tr></table></figure>
 
-<p>「」</p>
+<p>常用的方法有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">方案</th>
+<th align="left">父组件向子组件</th>
+<th align="left">子组件向父组件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">props &#x2F; emits</td>
+<td align="left">props</td>
+<td align="left">emits</td>
+</tr>
+<tr>
+<td align="left">v-model &#x2F; emits</td>
+<td align="left">v-model</td>
+<td align="left">emits</td>
+</tr>
+<tr>
+<td align="left">ref &#x2F; emits</td>
+<td align="left">ref</td>
+<td align="left">emits</td>
+</tr>
+<tr>
+<td align="left">provide &#x2F; inject</td>
+<td align="left">provide</td>
+<td align="left">inject</td>
+</tr>
+<tr>
+<td align="left">EventBus</td>
+<td align="left">emit &#x2F; on</td>
+<td align="left">emit &#x2F; on</td>
+</tr>
+<tr>
+<td align="left">Reative State</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">Vuex</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">Pinia</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<h2 id="爷孙组件通信"><a href="#爷孙组件通信" class="headerlink" title="爷孙组件通信"></a>爷孙组件通信</h2><p>顾名思义，爷孙组件是比 <a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">父子组件通信</a> 要更深层次的引用关系（也有称之为 “隔代组件” ）。</p>
+<p>C 组件被引入到 B 组件里， B 组件又被引入到 A 组件里渲染，此时 A 是 C 的爷爷级别（可能还有更多层级关系），它们之间的关系可以假设如下：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Grandfather</span>.</span></span>vue<br>└─<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Son</span>.</span></span>vue<br>  └─<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Grandson</span>.</span></span>vue<br></code></pre></td></tr></table></figure>
+
+<p>可以看到 Grandson.vue 并非直接挂载在 Grandfather.vue 下面，他们之间还隔着至少一个 Son.vue （在实际业务中可能存在更多层级），如果使用 props ，只能一级组件一级组件传递下去，就太繁琐了。</p>
+<p><img src="https://vue3.chengpeiquan.com/assets/img/communication-prop-drilling.png" srcset="/img/loading.gif" lazyload alt="Props 的多级传递会非常繁琐（摘自 Vue 官网）"></p>
+<p>Props 的多级传递会非常繁琐（摘自 Vue 官网）</p>
+<p>因此需要更直接的通信方式来解决这种问题，这一 Part 就是讲一讲 C 和 A 之间的数据传递，常用的方法有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">方案</th>
+<th align="left">爷组件向孙组件</th>
+<th align="left">孙组件向爷组件</th>
+<th align="left">对应章节传送门</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">provide &#x2F; inject</td>
+<td align="left">provide</td>
+<td align="left">inject</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#provide-inject">点击查看</a></td>
+</tr>
+<tr>
+<td align="left">EventBus</td>
+<td align="left">emit &#x2F; on</td>
+<td align="left">emit &#x2F; on</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#eventbus-new">点击查看</a></td>
+</tr>
+<tr>
+<td align="left">Reative State</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#reative-state-new">点击查看</a></td>
+</tr>
+<tr>
+<td align="left">Vuex</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#vuex-new">点击查看</a></td>
+</tr>
+<tr>
+<td align="left">Pinia</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/pinia.html">点击查看</a></td>
+</tr>
+</tbody></table>
+<p>因为上下级的关系的一致性，爷孙组件通信的方案也适用于 <a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">父子组件通信</a> ，只需要把爷孙关系换成父子关系即可，为了方便阅读，下面的爷组件统一叫 Grandfather.vue，子组件统一叫 Grandson.vue 。</p>
+<h2 id="兄弟组件通信"><a href="#兄弟组件通信" class="headerlink" title="兄弟组件通信#"></a>兄弟组件通信<a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">#</a></h2><p>兄弟组件是指两个组件都挂载在同一个 Father.vue 下，但两个组件之间并没有什么直接的关联，先看看它们的关系：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Father</span>.</span></span>vue<br>├─<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Brother</span>.</span></span>vue<br>└─<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">LittleBrother</span>.</span></span>vue<br></code></pre></td></tr></table></figure>
+
+<p>这种层级关系下，如果组件之间要进行通信，目前通常有这两类选择：</p>
+<ol>
+<li>【不推荐】先把数据传给 Father.vue ，再使用 <a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">父子组件通信</a> 方案处理</li>
+<li>【推荐】借助 <a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">全局组件通信</a> 的方案达到目的</li>
+</ol>
+<p>下面的内容将进入全局通信的讲解。</p>
+<h2 id="全局组件通信"><a href="#全局组件通信" class="headerlink" title="全局组件通信#"></a>全局组件通信<a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">#</a></h2><p>全局组件通信是指项目下两个任意组件，不管是否有直接关联（例如父子关系、爷孙关系）都可以直接进行交流的通信方案。</p>
+<p>举个例子，像下面这种项目结构， B2.vue 可以采用全局通信方案直接向 D2.vue 发起交流，而无需经过它们各自的父组件。</p>
+<p>bash</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">A</span>.</span></span>vue<br>├─<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B1</span>.</span></span>vue<br>├───<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">C1</span>.</span></span>vue<br>├─────<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">D1</span>.</span></span>vue<br>├─────<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">D2</span>.</span></span>vue<br>├───<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">C2</span>.</span></span>vue<br>├─────<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">D3</span>.</span></span>vue<br>└─<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B2</span>.</span></span>vue<br></code></pre></td></tr></table></figure>
+
+<p>常用的方法有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">方案</th>
+<th align="left">发起方</th>
+<th align="left">接收方</th>
+<th align="left">对应章节传送门</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">EventBus</td>
+<td align="left">emit</td>
+<td align="left">on</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#eventbus-new">点击查看</a></td>
+</tr>
+<tr>
+<td align="left">Reative State</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#reative-state-new">点击查看</a></td>
+</tr>
+<tr>
+<td align="left">Vuex</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#vuex-new">点击查看</a></td>
+</tr>
+<tr>
+<td align="left">Pinia</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/pinia.html">点击查看</a></td>
+</tr>
+</tbody></table>
+<h2 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus#"></a>EventBus<a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html#eventbus-new">#</a></h2><p>EventBus 通常被称之为 “全局事件总线” ，是用在全局范围内通信的一个常用方案，在 Vue 2 时期该方案非常流行，其特点就是 “简单” 、 “灵活” 、 “轻量级” 。</p>
+<h2 id="Reative-State"><a href="#Reative-State" class="headerlink" title="Reative State"></a>Reative State</h2><p>在 Vue 3 里，使用响应式的 reative API 也可以实现一个小型的状态共享库，如果运用在一个简单的 H5 活动页面这样小需求里，完全可以满足使用。</p>
+<p>Sorce: <a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/communication.html">组件之间的通信 | Vue3 入门指南与实战案例 (chengpeiquan.com)</a></p>
 
                 
               </div>
@@ -307,15 +449,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/" class="category-chain-item">前端项目</a>
+  <a href="/categories/Vue-Basic/" class="category-chain-item">Vue Basic</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/CMS-%E9%A1%B9%E7%9B%AE/" class="category-chain-item">CMS 项目</a>
-  
-  
-
   
 
       </span>
@@ -334,8 +469,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>动态路由</div>
-      <div>http://haofeng.wiki/2023/03/9771e484b89a.html</div>
+      <div></div>
+      <div>http://haofeng.wiki/2023/03/4d2e36a27bd2.html</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +482,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月21日</div>
+          <div>2023年3月25日</div>
         </div>
       
       
@@ -379,9 +514,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/581bebdce476.html" title="计算机网络">
+                      <a href="/2023/03/a44dc1f20da9.html" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机网络</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -389,8 +524,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/18a6def6cce0.html" title="用户管理">
-                        <span class="hidden-mobile">用户管理</span>
+                      <a href="/2023/03/f13134216981.html" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -16,21 +16,21 @@
   <meta name="author" content="Hao Feng">
   <meta name="keywords" content="">
   
-    <meta name="description" content="动态路由1.1. 基于角色添加路由定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。 缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON 1.2. 基于菜单动态匹配（*）没有权限就没有对应的菜单，把菜单映射成路由对象。 将 views 和动态路由对应起来，以便自动化处理 1.3. 动态创建页面和路由对象自动化添加：coderwhy add3">
+    <meta name="description" content="状态树的结构   作用 Vue Component Vuex Pinia    数据管理 data state state   数据计算 computed getters getters   行为方法 methods mutations &#x2F; actions actions   可以看到 Pinia 的结构和用途都和 Vuex 与 Component 非常相似，并且 Pinia 相对于 V">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动态路由">
-<meta property="og:url" content="http://haofeng.wiki/2023/03/9771e484b89a.html">
+<meta property="og:title" content="HF&#39;s Blog">
+<meta property="og:url" content="http://haofeng.wiki/2023/03/a44dc1f20da9.html">
 <meta property="og:site_name" content="HF&#39;s Blog">
-<meta property="og:description" content="动态路由1.1. 基于角色添加路由定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。 缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON 1.2. 基于菜单动态匹配（*）没有权限就没有对应的菜单，把菜单映射成路由对象。 将 views 和动态路由对应起来，以便自动化处理 1.3. 动态创建页面和路由对象自动化添加：coderwhy add3">
+<meta property="og:description" content="状态树的结构   作用 Vue Component Vuex Pinia    数据管理 data state state   数据计算 computed getters getters   行为方法 methods mutations &#x2F; actions actions   可以看到 Pinia 的结构和用途都和 Vuex 与 Component 非常相似，并且 Pinia 相对于 V">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-21T21:03:00.000Z">
+<meta property="article:published_time" content="2023-03-25T12:29:12.359Z">
 <meta property="article:modified_time" content="2023-03-25T12:29:12.359Z">
 <meta property="article:author" content="Hao Feng">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>动态路由 - HF&#39;s Blog</title>
+  <title>HF&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="动态路由"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-21 21:03" pubdate>
-          2023年3月21日 晚上
+        <time datetime="2023-03-25 12:29" pubdate>
+          2023年3月25日 中午
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          679 字
+          1.4k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          6 分钟
+          13 分钟
         
       </span>
     
@@ -268,28 +268,63 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">动态路由</h1>
+            <h1 style="display: none"></h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h1><h3 id="1-1-基于角色添加路由"><a href="#1-1-基于角色添加路由" class="headerlink" title="1.1. 基于角色添加路由"></a>1.1. 基于角色添加路由</h3><p>定义一个枚举类或者对象，将角色和其能访问的路由进行绑定。</p>
-<p>缺点：每增加一个角色，都要增加 key&#x2F;value，并且需要重新发布或者从后端返回 JSON</p>
-<h3 id="1-2-基于菜单动态匹配（-）"><a href="#1-2-基于菜单动态匹配（-）" class="headerlink" title="1.2. 基于菜单动态匹配（*）"></a>1.2. 基于菜单动态匹配（*）</h3><p>没有权限就没有对应的菜单，<strong>把菜单映射成路由对象</strong>。</p>
-<p>将 views 和动态路由对应起来，以便自动化处理</p>
-<h3 id="1-3-动态创建页面和路由对象"><a href="#1-3-动态创建页面和路由对象" class="headerlink" title="1.3. 动态创建页面和路由对象"></a>1.3. 动态创建页面和路由对象</h3><p>自动化添加：coderwhy add3page_setup {pagename} -d {path} （保证Router 和 Views 对应一致）</p>
-<h3 id="1-4-从文件中读取所有的路由"><a href="#1-4-从文件中读取所有的路由" class="headerlink" title="1.4. 从文件中读取所有的路由"></a>1.4. 从文件中读取所有的路由</h3><ul>
-<li>localRoutes</li>
-</ul>
-<h3 id="1-5-根据菜单动态的映射路由"><a href="#1-5-根据菜单动态的映射路由" class="headerlink" title="1.5. 根据菜单动态的映射路由"></a>1.5. 根据菜单动态的映射路由</h3><ul>
-<li>routes</li>
-<li>router.addRoute(‘main’, xxxx)</li>
-</ul>
-<h3 id="1-6-刷新保持路由的注册状态"><a href="#1-6-刷新保持路由的注册状态" class="headerlink" title="1.6. 刷新保持路由的注册状态"></a>1.6. 刷新保持路由的注册状态</h3><h3 id="1-7-登录进入匹配第一个页面"><a href="#1-7-登录进入匹配第一个页面" class="headerlink" title="1.7. 登录进入匹配第一个页面"></a>1.7. 登录进入匹配第一个页面</h3><h3 id="1-8-刷新页面根据路径匹配menu菜单"><a href="#1-8-刷新页面根据路径匹配menu菜单" class="headerlink" title="1.8. 刷新页面根据路径匹配menu菜单"></a>1.8. 刷新页面根据路径匹配menu菜单</h3><h3 id="1-9-面包屑的功能实现"><a href="#1-9-面包屑的功能实现" class="headerlink" title="1.9. 面包屑的功能实现"></a>1.9. 面包屑的功能实现</h3><p>点击面包屑实现路由跳转，</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">el-breadcrumb</span> <span class="hljs-attr">separator-icon</span>=<span class="hljs-string">&quot;CaretRight&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in breadcrumbs&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.name&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">el-breadcrumb-item</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;item.path&quot;</span>&gt;</span><br>          &#123;&#123; item.name &#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb-item</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb</span>&gt;</span><br></code></pre></td></tr></table></figure>
+                <h2 id="状态树的结构"><a href="#状态树的结构" class="headerlink" title="状态树的结构"></a>状态树的结构</h2><table>
+<thead>
+<tr>
+<th align="center">作用</th>
+<th align="center">Vue Component</th>
+<th align="center">Vuex</th>
+<th align="center">Pinia</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数据管理</td>
+<td align="center">data</td>
+<td align="center">state</td>
+<td align="center">state</td>
+</tr>
+<tr>
+<td align="center">数据计算</td>
+<td align="center">computed</td>
+<td align="center">getters</td>
+<td align="center">getters</td>
+</tr>
+<tr>
+<td align="center">行为方法</td>
+<td align="center">methods</td>
+<td align="center">mutations &#x2F; actions</td>
+<td align="center">actions</td>
+</tr>
+</tbody></table>
+<p>可以看到 Pinia 的结构和用途都和 Vuex 与 Component 非常相似，并且 Pinia 相对于 Vuex ，在行为方法部分去掉了 mutations （同步操作）和 actions （异步操作）的区分，更接近组件的结构，入门成本会更低一些。</p>
+<h2 id="管理-state"><a href="#管理-state" class="headerlink" title="管理 state"></a>管理 state</h2><h3 id="给-Store-添加-state"><a href="#给-Store-添加-state" class="headerlink" title="给 Store 添加 state#"></a>给 Store 添加 state<a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/pinia.html#%E7%BB%99-store-%E6%B7%BB%E5%8A%A0-state">#</a></h3><p>它是通过一个箭头函数的形式来返回数据，并且能够正确的帮推导 TypeScript 类型：</p>
+<p>ts</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> src<span class="hljs-regexp">/stores/i</span>ndex.ts<br>import &#123; defineStore &#125; from <span class="hljs-string">&#x27;pinia&#x27;</span><br><br>export const useStore = defineStore(<span class="hljs-string">&#x27;main&#x27;</span>, &#123;<br>  <span class="hljs-regexp">//</span> 先定义一个最基本的 message 数据<br>  state: () =&gt; (&#123;<br>    message: <span class="hljs-string">&#x27;Hello World&#x27;</span>,<br>  &#125;),<br>  <span class="hljs-regexp">//</span> ...<br>&#125;)<br></code></pre></td></tr></table></figure>
 
-<p>「」</p>
+<p>需要注意一点的是，如果不显式 return ，箭头函数的返回值需要用圆括号 <code>()</code> 套起来，这个是箭头函数的要求（详见：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions#%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F">返回对象字面量</a>）。</p>
+<p>所以相当于这样写：</p>
+<p>ts</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs dart"><span class="hljs-comment">// ...</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useStore = defineStore(<span class="hljs-string">&#x27;main&#x27;</span>, &#123;<br>  state: () =&gt; &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      message: <span class="hljs-string">&#x27;Hello World&#x27;</span>,<br>    &#125;<br>  &#125;,<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
 
+<h3 id="获取和更新-state"><a href="#获取和更新-state" class="headerlink" title="获取和更新 state"></a>获取和更新 state</h3><ol>
+<li>可以直接通过 <code>store.xxx</code> 直接调用 state 里的数据。</li>
+<li>通过计算数据 <code>computed</code> 拿到里面的 <code>xxx</code> 数据传给 template 使用(只读)</li>
+<li>使用 storeToRefs API</li>
+<li>使用 actions 方法</li>
+<li>批量更新 state：使用 <code>$patch</code> API 用于同时修改多个数据or 使用 action</li>
+<li>全量更新 state:  store.$state拿到数据直接赋值</li>
+</ol>
+<h3 id="重置-state"><a href="#重置-state" class="headerlink" title="重置 state"></a>重置 state</h3><p>store.$reset()</p>
+<h3 id="订阅-state"><a href="#订阅-state" class="headerlink" title="订阅 state"></a>订阅 state</h3><p>和 Vuex 一样， Pinia 也提供了一个用于订阅 state 的 <code>$subscribe</code> API 。</p>
+<h2 id="管理-getters"><a href="#管理-getters" class="headerlink" title="管理 getters"></a>管理 getters</h2><p>在 <a target="_blank" rel="noopener" href="https://vue3.chengpeiquan.com/pinia.html#%E7%8A%B6%E6%80%81%E6%A0%91%E7%9A%84%E7%BB%93%E6%9E%84">状态树的结构</a> 了解过， Pinia 的 <code>getters</code> 是用来计算数据的。</p>
+<h3 id="给-Store-添加-getter"><a href="#给-Store-添加-getter" class="headerlink" title="给 Store 添加 getter"></a>给 Store 添加 getter</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// src/stores/index.ts</span><br><span class="hljs-keyword">import</span> &#123; defineStore &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pinia&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useStore = <span class="hljs-title function_">defineStore</span>(<span class="hljs-string">&#x27;main&#x27;</span>, &#123;<br>  <span class="hljs-attr">state</span>: <span class="hljs-function">() =&gt;</span> (&#123;<br>    <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Hello World&#x27;</span>,<br>  &#125;),<br>  <span class="hljs-comment">// 定义一个 fullMessage 的计算数据</span><br>  <span class="hljs-attr">getters</span>: &#123;<br>    <span class="hljs-attr">fullMessage</span>: <span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> <span class="hljs-string">`The message is &quot;<span class="hljs-subst">$&#123;state.message&#125;</span>&quot;.`</span>,<br>  &#125;,<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h4 id="添加普通的-getter"><a href="#添加普通的-getter" class="headerlink" title="添加普通的 getter"></a>添加普通的 getter</h4><h4 id="添加引用-getter-的-getter"><a href="#添加引用-getter-的-getter" class="headerlink" title="添加引用 getter 的 getter"></a>添加引用 getter 的 getter</h4><h4 id="给-getter-传递参数"><a href="#给-getter-传递参数" class="headerlink" title="给 getter 传递参数"></a>给 getter 传递参数</h4><h3 id="获取和更新-getter"><a href="#获取和更新-getter" class="headerlink" title="获取和更新 getter"></a>获取和更新 getter</h3><h2 id="管理-actions"><a href="#管理-actions" class="headerlink" title="管理 actions"></a>管理 actions</h2>
                 
               </div>
             
@@ -307,15 +342,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/" class="category-chain-item">前端项目</a>
+  <a href="/categories/Vue-Basic/" class="category-chain-item">Vue Basic</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/CMS-%E9%A1%B9%E7%9B%AE/" class="category-chain-item">CMS 项目</a>
-  
-  
-
   
 
       </span>
@@ -334,8 +362,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>动态路由</div>
-      <div>http://haofeng.wiki/2023/03/9771e484b89a.html</div>
+      <div></div>
+      <div>http://haofeng.wiki/2023/03/a44dc1f20da9.html</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +375,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月21日</div>
+          <div>2023年3月25日</div>
         </div>
       
       
@@ -379,9 +407,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/581bebdce476.html" title="计算机网络">
+                      <a href="/2023/03/aa0b9faea1f7.html" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机网络</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -389,8 +417,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/18a6def6cce0.html" title="用户管理">
-                        <span class="hidden-mobile">用户管理</span>
+                      <a href="/2023/03/4d2e36a27bd2.html" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
