@@ -23,30 +23,30 @@
 <meta property="og:site_name" content="HF&#39;s Blog">
 <meta property="og:description" content="登录页面  主界面   管理界面  细节      ScrollMessage 组件的实现 从服务器获取 warnTextList 东西要往左滚动才合理哈 当滚动scrollLeft大于列表内容width时恢复为0 也可以建立 websocket 接收服务端数据时触发ws.onmessage，将服务器的数据加入 warnTextList实现动态加入 记得用生命周期函数beforeDestroy">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135421386.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135509546.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328140304127.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328140108414.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135554916.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135720305.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135751789.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135809190.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135943834.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330154526198.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330180725468.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330155830762.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330180822767.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330183452583.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330184430410.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330184452388.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330194719011.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330200323936.png">
-<meta property="og:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330203609632.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135421386.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135509546.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328140304127.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328140108414.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135554916.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135720305.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135751789.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135809190.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135943834.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330154526198.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330180725468.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330155830762.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330180822767.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330183452583.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330184430410.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330184452388.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330194719011.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330200323936.png">
+<meta property="og:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330203609632.png">
 <meta property="article:published_time" content="2023-02-11T14:29:00.000Z">
-<meta property="article:modified_time" content="2023-03-30T14:13:46.338Z">
+<meta property="article:modified_time" content="2023-04-27T16:38:48.403Z">
 <meta property="article:author" content="Hao Feng">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135421386.png">
+<meta name="twitter:image" content="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135421386.png">
   
   
   
@@ -294,29 +294,29 @@
               <div class="markdown-body">
                 
                 <p>登录页面</p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135421386.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135421386.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
 <p>主界面</p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135509546.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328140304127.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135509546.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328140304127.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
 <p>管理界面</p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328140108414.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328140108414.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
 <p>细节</p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135554916.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135720305.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135751789.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135809190.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230328135943834.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135554916.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135720305.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135751789.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135809190.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230328135943834.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
 <h1 id="ScrollMessage-组件的实现"><a href="#ScrollMessage-组件的实现" class="headerlink" title="ScrollMessage 组件的实现"></a>ScrollMessage 组件的实现</h1><ul>
 <li>从服务器获取 warnTextList</li>
 <li>东西要往左滚动才合理哈</li>
 <li>当滚动scrollLeft大于列表内容width时恢复为0</li>
-<li>也可以建立 websocket 接收服务端数据时触发ws.onmessage，将服务器的数据加入 warnTextList实现动态加入<img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330154526198.png" srcset="/img/loading.gif" lazyload alt="组件细节"></li>
+<li>也可以建立 websocket 接收服务端数据时触发ws.onmessage，将服务器的数据加入 warnTextList实现动态加入<img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330154526198.png" srcset="/img/loading.gif" lazyload alt="组件细节"></li>
 <li>记得用生命周期函数beforeDestroy  clearInterval 不要造成浪费</li>
 </ul>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330180725468.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330180725468.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
 <h1 id="Loading-组件的实现"><a href="#Loading-组件的实现" class="headerlink" title="Loading 组件的实现"></a>Loading 组件的实现</h1><ul>
 <li><p>效果如下</p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330155830762.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330155830762.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
 </li>
 <li><p>包括三个部分：一个圆形边框、两个内部的旋转边框和一个中间的文本。</p>
 </li>
@@ -327,7 +327,7 @@
 <li><p>animation 关键帧 ：文字和外面的 div 方向旋转</p>
 </li>
 </ul>
-<h1 id="toolsPanel组件的实现"><a href="#toolsPanel组件的实现" class="headerlink" title="toolsPanel组件的实现"></a>toolsPanel组件的实现</h1><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330180822767.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<h1 id="toolsPanel组件的实现"><a href="#toolsPanel组件的实现" class="headerlink" title="toolsPanel组件的实现"></a>toolsPanel组件的实现</h1><p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330180822767.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
 <ul>
 <li>加点小样式：iconfont选中样式（封装函数，确保 radio 选择的唯一性）</li>
 <li>点击触发图层面板点击事件，控制显示与隐藏，开关逻辑！<ul>
@@ -336,9 +336,9 @@
 </ul>
 </li>
 </ul>
-<h1 id="layerPanel-组件的实现"><a href="#layerPanel-组件的实现" class="headerlink" title="layerPanel 组件的实现"></a>layerPanel 组件的实现</h1><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330183452583.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330184430410.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330184452388.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<h1 id="layerPanel-组件的实现"><a href="#layerPanel-组件的实现" class="headerlink" title="layerPanel 组件的实现"></a>layerPanel 组件的实现</h1><p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330183452583.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330184430410.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330184452388.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
 <ul>
 <li><p>划分片区：title、radio、checkbox、switch 具名插槽的使用</p>
 <ul>
@@ -355,7 +355,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="legendBox-组件的实现"><a href="#legendBox-组件的实现" class="headerlink" title="legendBox 组件的实现"></a>legendBox 组件的实现</h1><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330194719011.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<h1 id="legendBox-组件的实现"><a href="#legendBox-组件的实现" class="headerlink" title="legendBox 组件的实现"></a>legendBox 组件的实现</h1><p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330194719011.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
 <ul>
 <li><p>颜色动态切换 <code>ref=&quot;colorBlock&quot;</code> 拿到后增加样式</p>
 <p>item.attributes.style.value &#x3D; <code>background: $&#123;data[index].color&#125;;</code></p>
@@ -363,7 +363,7 @@
 <li><p>动态监听图例是否发生变化，如果图例名发生变化则调用nextTick修改图列块颜色</p>
 </li>
 </ul>
-<h1 id="measureBar-组件的实现"><a href="#measureBar-组件的实现" class="headerlink" title="measureBar 组件的实现"></a>measureBar 组件的实现</h1><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330200323936.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<h1 id="measureBar-组件的实现"><a href="#measureBar-组件的实现" class="headerlink" title="measureBar 组件的实现"></a>measureBar 组件的实现</h1><p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330200323936.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
 <ul>
 <li>Cesium 创建测量对象</li>
 <li>drawLineMeasureGraphics（RIGHT_CLICK就停止）</li>
@@ -375,7 +375,7 @@
 <li>add</li>
 <li>Destroy</li>
 </ul>
-<h1 id="leftPanel-组件的实现"><a href="#leftPanel-组件的实现" class="headerlink" title="leftPanel 组件的实现"></a>leftPanel 组件的实现</h1><p><img src="http://rrk0fj71q.hn-bkt.clouddn.com/image-20230330203609632.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+<h1 id="leftPanel-组件的实现"><a href="#leftPanel-组件的实现" class="headerlink" title="leftPanel 组件的实现"></a>leftPanel 组件的实现</h1><p><img src="http://rts0rcjxp.hn-bkt.clouddn.com/image-20230330203609632.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
 <ul>
 <li>缩放按钮 shrink 使用<code>:class</code>来控制左右按钮样式</li>
 <li>slot 套娃 container-panel 套娃 chart-panel</li>
