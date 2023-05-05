@@ -16,41 +16,34 @@
   <meta name="author" content="Hao Feng">
   <meta name="keywords" content="">
   
-    <meta name="description" content="登录页面  主界面   管理界面  细节      ScrollMessage 组件的实现 从服务器获取 warnTextList 东西要往左滚动才合理哈 当滚动scrollLeft大于列表内容width时恢复为0 也可以建立 websocket 接收服务端数据时触发ws.onmessage，将服务器的数据加入 warnTextList实现动态加入 记得用生命周期函数beforeDestroy">
+    <meta name="description" content="Prisma12pnpm i -D prismanpx prisma init   更改.env文件 12345678# Environment variables declared in this file are automatically made available to Prisma.# See the documentation for more detail: https:&#x2F;&#x2F;pri">
 <meta property="og:type" content="article">
-<meta property="og:title" content="双流三维 GIS 可视化内涝分析系统">
-<meta property="og:url" content="http://haofeng.wiki/2023/02/c5c4635c533a.html">
+<meta property="og:title" content="CMS">
+<meta property="og:url" content="http://haofeng.wiki/2023/03/b8c495fc360e.html">
 <meta property="og:site_name" content="HF&#39;s Blog">
-<meta property="og:description" content="登录页面  主界面   管理界面  细节      ScrollMessage 组件的实现 从服务器获取 warnTextList 东西要往左滚动才合理哈 当滚动scrollLeft大于列表内容width时恢复为0 也可以建立 websocket 接收服务端数据时触发ws.onmessage，将服务器的数据加入 warnTextList实现动态加入 记得用生命周期函数beforeDestroy">
+<meta property="og:description" content="Prisma12pnpm i -D prismanpx prisma init   更改.env文件 12345678# Environment variables declared in this file are automatically made available to Prisma.# See the documentation for more detail: https:&#x2F;&#x2F;pri">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328135421386.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328135509546.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328140304127.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328140108414.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328135554916.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328135720305.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328135751789.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328135809190.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230328135943834.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330154526198.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330180725468.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330155830762.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330180822767.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330183452583.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330184430410.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330184452388.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330194719011.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330200323936.png">
-<meta property="og:image" content="http://img.haofeng.wiki/image-20230330203609632.png">
-<meta property="article:published_time" content="2023-02-11T14:29:00.000Z">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427204611695.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427204750433.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427204805474.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427204920157.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427205307680.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427205505050.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427210257759.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427210324036.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427210424111.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427210531792.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427210554889.png">
+<meta property="og:image" content="http://img.haofeng.wiki/image-20230427210706568.png">
+<meta property="article:published_time" content="2023-03-11T11:29:00.000Z">
 <meta property="article:modified_time" content="2023-05-05T01:46:19.477Z">
 <meta property="article:author" content="Hao Feng">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://img.haofeng.wiki/image-20230328135421386.png">
+<meta name="twitter:image" content="http://img.haofeng.wiki/image-20230427204611695.png">
   
   
   
-  <title>双流三维 GIS 可视化内涝分析系统 - HF&#39;s Blog</title>
+  <title>CMS - HF&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="双流三维 GIS 可视化内涝分析系统"></span>
+            <span id="subtitle" data-typed-text="CMS"></span>
           
         </div>
 
@@ -227,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-11 14:29" pubdate>
-          2023年2月11日 下午
+        <time datetime="2023-03-11 11:29" pubdate>
+          2023年3月11日 上午
         </time>
       </span>
     
@@ -239,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          1.4k 字
         
       </span>
     
@@ -250,7 +243,7 @@
         
         
         
-          16 分钟
+          12 分钟
         
       </span>
     
@@ -288,106 +281,105 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">双流三维 GIS 可视化内涝分析系统</h1>
+            <h1 style="display: none">CMS</h1>
             
             
               <div class="markdown-body">
                 
-                <p>登录页面</p>
-<p><img src="http://img.haofeng.wiki/image-20230328135421386.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p>主界面</p>
-<p><img src="http://img.haofeng.wiki/image-20230328135509546.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://img.haofeng.wiki/image-20230328140304127.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p>管理界面</p>
-<p><img src="http://img.haofeng.wiki/image-20230328140108414.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p>细节</p>
-<p><img src="http://img.haofeng.wiki/image-20230328135554916.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://img.haofeng.wiki/image-20230328135720305.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://img.haofeng.wiki/image-20230328135751789.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://img.haofeng.wiki/image-20230328135809190.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<p><img src="http://img.haofeng.wiki/image-20230328135943834.png" srcset="/img/loading.gif" lazyload alt="效果示意图"></p>
-<h1 id="ScrollMessage-组件的实现"><a href="#ScrollMessage-组件的实现" class="headerlink" title="ScrollMessage 组件的实现"></a>ScrollMessage 组件的实现</h1><ul>
-<li>从服务器获取 warnTextList</li>
-<li>东西要往左滚动才合理哈</li>
-<li>当滚动scrollLeft大于列表内容width时恢复为0</li>
-<li>也可以建立 websocket 接收服务端数据时触发ws.onmessage，将服务器的数据加入 warnTextList实现动态加入<img src="http://img.haofeng.wiki/image-20230330154526198.png" srcset="/img/loading.gif" lazyload alt="组件细节"></li>
-<li>记得用生命周期函数beforeDestroy  clearInterval 不要造成浪费</li>
-</ul>
-<p><img src="http://img.haofeng.wiki/image-20230330180725468.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<h1 id="Loading-组件的实现"><a href="#Loading-组件的实现" class="headerlink" title="Loading 组件的实现"></a>Loading 组件的实现</h1><ul>
-<li><p>效果如下</p>
-<p><img src="http://img.haofeng.wiki/image-20230330155830762.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
+                <h1 id="Prisma"><a href="#Prisma" class="headerlink" title="Prisma"></a>Prisma</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">pnpm i -D prisma<br>npx prisma init <br></code></pre></td></tr></table></figure>
+
+<p>更改<code>.env</code>文件</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment"># Environment variables declared in this file are automatically made available to Prisma.</span><br><span class="hljs-comment"># See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema</span><br><br><span class="hljs-comment"># Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.</span><br><span class="hljs-comment"># See the documentation for all the connection string options: https://pris.ly/d/connection-strings</span><br><br><span class="hljs-attr">DATABASE_URL</span>=<span class="hljs-string">&quot;mongodb+srv://raphael:raphael@cluster0.pulk3rt.mongodb.net/test&quot;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>push 到 Atlas 服务器中</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">npx prisma <span class="hljs-built_in">db</span> <span class="hljs-keyword">push</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="MongoDB-Atlas"><a href="#MongoDB-Atlas" class="headerlink" title="MongoDB Atlas"></a>MongoDB Atlas</h1><p>使用谷歌账号注册云存储，获得 connection string</p>
+<h1 id="next-auth-x2F-prisma-adapter"><a href="#next-auth-x2F-prisma-adapter" class="headerlink" title="@next-auth&#x2F;prisma-adapter"></a>@next-auth&#x2F;prisma-adapter</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">pnpm <span class="hljs-built_in">add</span> next-auth @prisma<span class="hljs-built_in">/client </span>@next-auth/prisma-adapter<br>pnpm <span class="hljs-built_in">add</span> prisma --save-dev<br></code></pre></td></tr></table></figure>
+
+<p>配置 config</p>
+<h1 id="bcrypt"><a href="#bcrypt" class="headerlink" title="bcrypt"></a>bcrypt</h1><p><strong>password-hashing function</strong> A library to help you hash passwords.</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pnpm <span class="hljs-keyword">install</span> bcrypt<br>pnpm <span class="hljs-keyword">install</span> -D @types/bcrypt<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="部署地址"><a href="#部署地址" class="headerlink" title="部署地址"></a>部署地址</h1><p><a href="hfbnb.vercel.app">爱比邻克隆 v2 （需要科学上网）</a></p>
+<h1 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h1><ul>
+<li><p>React + TS</p>
 </li>
-<li><p>包括三个部分：一个圆形边框、两个内部的旋转边框和一个中间的文本。</p>
+<li><p>next 13 服务端渲染</p>
 </li>
-<li><p>边框 + boarder-radius 50% 成圆，boarder-top 只留上面一条</p>
+<li><p>next-auth 身份验证</p>
 </li>
-<li><p>一个条条用 ::before 和 ::after 伪类等到相同的条条，再加上 transform：rotate（120,240）可以得到一个圈</p>
+<li><p>next-cloudinary 图片上传</p>
 </li>
-<li><p>animation 关键帧 ：文字和外面的 div 方向旋转</p>
+<li><p>prisma TypeScript ORM</p>
 </li>
-</ul>
-<h1 id="toolsPanel组件的实现"><a href="#toolsPanel组件的实现" class="headerlink" title="toolsPanel组件的实现"></a>toolsPanel组件的实现</h1><p><img src="http://img.haofeng.wiki/image-20230330180822767.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<ul>
-<li>加点小样式：iconfont选中样式（封装函数，确保 radio 选择的唯一性）</li>
-<li>点击触发图层面板点击事件，控制显示与隐藏，开关逻辑！<ul>
-<li>关闭打开的</li>
-<li>关闭打开的+打开新的</li>
-</ul>
+<li><p>Mangodb Atlas 数据库</p>
 </li>
-</ul>
-<h1 id="layerPanel-组件的实现"><a href="#layerPanel-组件的实现" class="headerlink" title="layerPanel 组件的实现"></a>layerPanel 组件的实现</h1><p><img src="http://img.haofeng.wiki/image-20230330183452583.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<p><img src="http://img.haofeng.wiki/image-20230330184430410.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<p><img src="http://img.haofeng.wiki/image-20230330184452388.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<ul>
-<li><p>划分片区：title、radio、checkbox、switch 具名插槽的使用</p>
-<ul>
-<li><p>title</p>
+<li><p>bcrypt 密码加密</p>
 </li>
-<li><p>Radio : cesium 查找数据集 getLegendData 不同类型等级阈值获取 viewerFlyTo</p>
+<li><p>date-fns 日期工具</p>
 </li>
-<li><p>checkbox：通过实体数据集的name属性查找数据集</p>
+<li><p>leaflet 轻量级地图</p>
 </li>
-<li><p>switch</p>
+<li><p>react-hook-form 表单验证</p>
 </li>
-<li><p><strong>自定义指令 v-drag</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">directive</span>(<span class="hljs-string">&#x27;drag&#x27;</span>, &#123;<br>  <span class="hljs-attr">inserted</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">el,data</span>) &#123;<br>    el.<span class="hljs-property">style</span>.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;absolute&#x27;</span>;<br>    el.<span class="hljs-property">style</span>.<span class="hljs-property">cursor</span> = <span class="hljs-string">&#x27;move&#x27;</span>;<br>    el.<span class="hljs-property">onmousedown</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>)&#123;<br>      <span class="hljs-keyword">let</span> startX = event.<span class="hljs-property">clientX</span>;<br>      <span class="hljs-keyword">let</span> startY = event.<span class="hljs-property">clientY</span>;<br>      <span class="hljs-keyword">let</span> left = el.<span class="hljs-property">offsetLeft</span>;<br>      <span class="hljs-keyword">let</span> top = el.<span class="hljs-property">offsetTop</span>;<br>      <span class="hljs-variable language_">document</span>.<span class="hljs-property">onmousemove</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>)&#123;<br>        <span class="hljs-keyword">let</span> X = event.<span class="hljs-property">clientX</span> - startX<br>        <span class="hljs-keyword">let</span> Y = event.<span class="hljs-property">clientY</span> - startY;<br>        el.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;X + left&#125;</span>px`</span>;<br>        el.<span class="hljs-property">style</span>.<span class="hljs-property">top</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;Y + top&#125;</span>px`</span>;<br>      &#125;<br>      <span class="hljs-variable language_">document</span>.<span class="hljs-property">onmouseup</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">document</span>.<span class="hljs-property">onmousemove</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-property">onmouseup</span> = <span class="hljs-literal">null</span>;<br>      &#125;;<br>    &#125;<br>  &#125;<br>&#125;)<br><br></code></pre></td></tr></table></figure></li>
-</ul>
+<li><p>react-hot-toast 消息弹窗</p>
+</li>
+<li><p>axios 网络请求</p>
+</li>
+<li><p>tailwindcss + postcss + autoprefixer 响应式样式</p>
+</li>
+<li><p>zustand 代替 redux</p>
 </li>
 </ul>
-<h1 id="legendBox-组件的实现"><a href="#legendBox-组件的实现" class="headerlink" title="legendBox 组件的实现"></a>legendBox 组件的实现</h1><p><img src="http://img.haofeng.wiki/image-20230330194719011.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<ul>
-<li><p>颜色动态切换 <code>ref=&quot;colorBlock&quot;</code> 拿到后增加样式</p>
-<p>item.attributes.style.value &#x3D; <code>background: $&#123;data[index].color&#125;;</code></p>
+<h1 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h1><ul>
+<li><p>主界面展示房源信息</p>
+<p><img src="http://img.haofeng.wiki/image-20230427204611695.png" srcset="/img/loading.gif" lazyload alt="image-20230427204611695"></p>
 </li>
-<li><p>动态监听图例是否发生变化，如果图例名发生变化则调用nextTick修改图列块颜色</p>
+<li><p>响应式布局</p>
+<p><img src="http://img.haofeng.wiki/image-20230427204750433.png" srcset="/img/loading.gif" lazyload alt="image-20230427204750433"></p>
+<p><img src="http://img.haofeng.wiki/image-20230427204805474.png" srcset="/img/loading.gif" lazyload alt="image-20230427204805474"></p>
+</li>
+<li><p>登录注册界面</p>
+<p><img src="http://img.haofeng.wiki/image-20230427204920157.png" srcset="/img/loading.gif" lazyload alt="image-20230427204920157"></p>
+<p>支持三种方式：邮箱、Google、GIthub</p>
+<p>登录后从 OAuth 中获得用户头像，解锁下拉菜单</p>
+<p>使用 next-auth 中间件实现路由守卫</p>
+<p><img src="http://img.haofeng.wiki/image-20230427205307680.png" srcset="/img/loading.gif" lazyload alt="image-20230427205307680"></p>
+</li>
+<li><p>用户可以喜欢房源并预定 available 的房源</p>
+<p><img src="http://img.haofeng.wiki/image-20230427205505050.png" srcset="/img/loading.gif" lazyload alt="image-20230427205505050"></p>
+</li>
+<li><p>房源详情界面可以看到其他房东的房源，选择日期预定</p>
+<p><img src="http://img.haofeng.wiki/image-20230427210257759.png" srcset="/img/loading.gif" lazyload alt="image-20230427210257759"></p>
+<p>​	<img src="http://img.haofeng.wiki/image-20230427210324036.png" srcset="/img/loading.gif" lazyload alt="image-20230427210324036"></p>
+</li>
+<li><p>预定完成可以访问到 Trip 页面</p>
+<p><img src="http://img.haofeng.wiki/image-20230427210424111.png" srcset="/img/loading.gif" lazyload alt="image-20230427210424111"></p>
+</li>
+<li><p>精准搜索房源（根据 available 日期地点人数···）</p>
+<p><img src="http://img.haofeng.wiki/image-20230427210531792.png" srcset="/img/loading.gif" lazyload alt="image-20230427210531792"></p>
+<p><img src="http://img.haofeng.wiki/image-20230427210554889.png" srcset="/img/loading.gif" lazyload alt="image-20230427210554889"></p>
+</li>
+<li><p>用户可以发布自己的房源信息（可以查看别的用户的预订信息，删除信息等操作）</p>
+<p><img src="http://img.haofeng.wiki/image-20230427210706568.png" srcset="/img/loading.gif" lazyload alt="image-20230427210706568"></p>
 </li>
 </ul>
-<h1 id="measureBar-组件的实现"><a href="#measureBar-组件的实现" class="headerlink" title="measureBar 组件的实现"></a>measureBar 组件的实现</h1><p><img src="http://img.haofeng.wiki/image-20230330200323936.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<ul>
-<li>Cesium 创建测量对象</li>
-<li>drawLineMeasureGraphics（RIGHT_CLICK就停止）</li>
-<li>drawAreaMeasureGraphics</li>
-<li>drawTrianglesMeasureGraphics</li>
-<li>cancelDraw</li>
-</ul>
-<h1 id="popUpInfo-组件的实现"><a href="#popUpInfo-组件的实现" class="headerlink" title="popUpInfo 组件的实现(?)"></a>popUpInfo 组件的实现(?)</h1><ul>
-<li>add</li>
-<li>Destroy</li>
-</ul>
-<h1 id="leftPanel-组件的实现"><a href="#leftPanel-组件的实现" class="headerlink" title="leftPanel 组件的实现"></a>leftPanel 组件的实现</h1><p><img src="http://img.haofeng.wiki/image-20230330203609632.png" srcset="/img/loading.gif" lazyload alt="组件细节"></p>
-<ul>
-<li>缩放按钮 shrink 使用<code>:class</code>来控制左右按钮样式</li>
-<li>slot 套娃 container-panel 套娃 chart-panel</li>
-<li>对 table 进行抽离，增加操作栏（下载、编辑、删除）</li>
-<li>el-table  elPagenation</li>
-</ul>
-<h1 id="lt-Transition-gt-组件"><a href="#lt-Transition-gt-组件" class="headerlink" title="&lt;Transition&gt; 组件"></a><code>&lt;Transition&gt;</code> 组件</h1><p><code>Transition&gt;</code> 是一个内置组件，这意味着它在任意别的组件中都可以被使用，无需注册。它可以将进入和离开动画应用到通过默认插槽传递给它的元素或组件上。进入或离开可以由以下的条件之一触发：</p>
-<ul>
-<li>由 <code>v-if</code> 所触发的切换</li>
-<li>由 <code>v-show</code> 所触发的切换</li>
-<li>由特殊元素 <code>&lt;component&gt;</code> 切换的动态组件</li>
-<li>改变特殊的 <code>key</code> 属性</li>
+<h1 id="TODOs"><a href="#TODOs" class="headerlink" title="TODOs"></a>TODOs</h1><ul>
+<li>在房东的 my reservation 界面,显示预定者的用户名</li>
+<li>增加 i18n 多语言切换</li>
+<li>增加 dark mode</li>
+<li>点击 user menu 的时候自动关闭 dropdown</li>
+<li>优化样式</li>
+<li>优化 ImageUploader 渲染卡顿的问题</li>
 </ul>
 
                 
@@ -427,8 +419,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>双流三维 GIS 可视化内涝分析系统</div>
-      <div>http://haofeng.wiki/2023/02/c5c4635c533a.html</div>
+      <div>CMS</div>
+      <div>http://haofeng.wiki/2023/03/b8c495fc360e.html</div>
     </div>
     <div class="license-meta">
       
@@ -440,7 +432,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年2月11日</div>
+          <div>2023年3月11日</div>
         </div>
       
       
@@ -472,15 +464,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/bd0fba360871.html" title="CMS">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CMS</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/02/bd0fba360871.html" title="CMS">
+                        <span class="hidden-mobile">CMS</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
